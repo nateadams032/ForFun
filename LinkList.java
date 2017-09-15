@@ -5,7 +5,7 @@
  */
 
 class LinkList {
-    Node llist;
+    DNode llist;
 
     LinkList( int sz ) {
 	if ( sz <= 0 ) {
@@ -13,12 +13,12 @@ class LinkList {
 	}
 	else {
 	    // start with list of size 1
-	    llist = new Node( "0", null );
-	    Node current = llist; // temp node for loop
+	    llist = new DNode( "0", null, null );
+	    DNode current = llist; // temp node for loop
 	    // add further nodes
 	    for ( int i=1; i<sz; ++i ) {
 		// create node and attach it to the list
-		Node node2Add = new Node( Integer.toString(i), null );
+		DNode node2Add = new DNode( Integer.toString(i), null, null );
 		current.setNext(node2Add);   // add first node
 		current=node2Add;
 	    }
@@ -30,7 +30,7 @@ class LinkList {
      */
     public void print() {
 	/* Print the list */
-	Node current = llist; // point to the first node
+	DNode current = llist; // point to the first node
 	while (current != null) {
 	    System.out.print((String)current.getElement() + " ");
 	    current = current.getNext(); // move to the next
@@ -46,8 +46,8 @@ class LinkList {
 
     public void deleteLast() {
 	if ( llist == null ) return; // no node
-	Node prev = llist;
-	Node current = prev.getNext();
+	DNode prev = llist;
+	DNode current = prev.getNext();
 	if ( current == null ) { // only 1 node
 	    llist = null;
 	    return;

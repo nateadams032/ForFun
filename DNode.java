@@ -11,12 +11,12 @@ public class DNode
     private Object element;
     private DNode next;
     private DNode prev;
-    Node()
+    DNode()
     {
         this(null, null, null);
     }
 
-    Node(Object e, DNode n, DNode p)
+    DNode(Object e, DNode n, DNode p)
     {
         element = e;
         next = n;
